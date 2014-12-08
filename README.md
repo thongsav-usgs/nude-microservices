@@ -4,6 +4,7 @@ nude-microservices
 NUDE Framework functions abstracted into microservices. This is currently only a proof-of-concept.
 
 Some assumptions/simplification used for proof:
+
 1. All datasources are in CSV format.
 2. No validation is being performed.
 3. Request format is GET. URL chaining currently performed using escaped query parameters.
