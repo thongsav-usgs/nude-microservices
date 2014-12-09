@@ -27,6 +27,19 @@ public class ExampleDataService {
 	}
 	
 	@GET
+	@Path("set1B")
+	@Produces("text/plain")
+	public void streamDataSet1B(@Context HttpServletResponse response) throws IOException {
+		OutputStream output = response.getOutputStream();
+	
+		output.write("ID,SET1B_COLUMN1,SET1B_COLUMN2\n".getBytes());
+		
+		for(int i = 0; i < NUM_OF_EXAMPLE_ROWS; i++) {
+			output.write(((i+1) + ",row " + (i+1) + " from SET1B_COLUMN1,row " + (i+1) + " from SET1B_COLUMN2\n").getBytes());
+		}
+	}
+	
+	@GET
 	@Path("set2")
 	@Produces("text/plain")
 	public void streamDataSet2(@Context HttpServletResponse response) throws IOException {
